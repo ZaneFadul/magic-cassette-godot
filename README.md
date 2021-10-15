@@ -79,7 +79,7 @@ This is probably a lot to take in, I know, but once you see the syntax for input
 
 The configuration file reads an **Action** as follows:
 ```js
-action_name = {"audio_control_method" : {"track_name" : {[extra parameters for the track]} } }
+action_name = {"audio_control_method" : {"track_name" : {[extra_parameters_for_the_track]} } }
 
 #Note: Extra parameters can simply be left as an empty dictionary: {}, this defaults the audio to loop.
 ```
@@ -88,7 +88,7 @@ Now, I need to create **Actions** for all of the **Tracks** I want to play.
 [Actions]
 play_overworld = {"play" : {"overworld" : {} } }
 play_item_shop = {"play" : {"item_shop" : {} } }
-play_castle = {"play" : {"castle : {} } }
+play_castle = {"play" : {"castle" : {} } }
 ```
 Again, ***think of the syntax as an abstract sentence, with each word being contained within its own dictionary.***
 
