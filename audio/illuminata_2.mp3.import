@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/illuminata_2.mp3-149c936a15f66c00c15aa4ebc08ae583.mp3str"
+
+[deps]
+
+source_file="res://audio/illuminata_2.mp3"
+dest_files=[ "res://.import/illuminata_2.mp3-149c936a15f66c00c15aa4ebc08ae583.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

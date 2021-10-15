@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/aether_low.mp3-ab376f82e9d3154a9dc467cacda8e533.mp3str"
+
+[deps]
+
+source_file="res://audio/aether_low.mp3"
+dest_files=[ "res://.import/aether_low.mp3-ab376f82e9d3154a9dc467cacda8e533.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
