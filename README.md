@@ -41,6 +41,11 @@ Once you have the `AudioManager` folder in your project, you now need to fill in
 
 For our example how to fill this configuration file, we're going to set up our manager for ***playing music in a fantasy town.*** This is a made up example, and not the example that is reflected in the files. With enough interest, I can defintely bring the example to life though!
 
+### TLDR
+1. Move `AudioManager` into project folder.
+2. Autoload `audio_manager.tscn` in Project Settings (place it *after* any globals)
+3. Fill out `audio.cfg`
+
 ## `Tracks`
 **Tracks** are objects that store:
 - an **alias**
