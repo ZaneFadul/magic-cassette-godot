@@ -199,6 +199,7 @@ And just like that, you've successfully set up a state-esque machine that will h
 ### Conclusion
 **Magic Cassette** is a work in progress, and I would love any feedback on how to improve the manager. Some things I have in mind right now are:
 - More integration for sound effects
+- Better error handling
 - Even more action control methods (adding filters, Method 2 mentioned above, changing AudioStreams to AudioStream2D or 3D for more flexibility)
 - Allowing more than one tree to be processed at a time (to allow for multiple different sounds to play at the same time)
 - Potentially better ways to retrieve **State Variables** without relying on adding methods to specified scene nodes
