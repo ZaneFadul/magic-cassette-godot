@@ -1,5 +1,5 @@
 # Magic Cassette (for Godot)
-## *a lightweight solution for audio management*
+## *a lightweight solution to audio management*
 ## Intro
 Well, the file names definitely don't correlate with the title *or* this repository, but that will change as I flesh this project out. For now, I'll help you guys understand a little bit how this audio manager works!
 
