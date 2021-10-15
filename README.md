@@ -58,7 +58,7 @@ track_name = [bpm, total_beats, <audio_file_path>]
 #Should you want to change the default audio path, you can change it in the _create_track_obj() method in audio_manager_config.gd
 ```
 For our fantasy town, we want an overworld theme, an item shop theme, and a castle theme. As such, we will add the following tracks to `audio.cfg`
-```haml
+```js
 [Tracks]
 overworld=[100, 120, "res://audio/bgm/overworld.mp3"]
 item_shop=[80, 32, "res://audio/bgm/buildings/item_shop.ogg"]
