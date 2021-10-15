@@ -52,7 +52,7 @@ A good rule of thumb is to give your audio track names consistent. "*untitled(3)
 
 The configuration file reads a **Track** as follows:
 ```js
-track_name = [bpm, total_beats, <audio_file_path>]
+track_name = [bpm, total_beats, <"audio_file_path">]
 
 #Note: audio_file_path is optional, but the default path is "res://audio/[track_name].mp3".
 #Should you want to change the default audio path, you can change it in the _create_track_obj() method in audio_manager_config.gd
