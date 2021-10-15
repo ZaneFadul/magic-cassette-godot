@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/judge_judith.mp3-c129d81cd4c158835d38b32ddcb3c4af.mp3str"
+
+[deps]
+
+source_file="res://audio/judge_judith.mp3"
+dest_files=[ "res://.import/judge_judith.mp3-c129d81cd4c158835d38b32ddcb3c4af.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

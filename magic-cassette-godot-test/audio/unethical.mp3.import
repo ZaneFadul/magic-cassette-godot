@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/unethical.mp3-36da1e55959983ce44f10007d8fb0f86.mp3str"
+
+[deps]
+
+source_file="res://audio/unethical.mp3"
+dest_files=[ "res://.import/unethical.mp3-36da1e55959983ce44f10007d8fb0f86.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

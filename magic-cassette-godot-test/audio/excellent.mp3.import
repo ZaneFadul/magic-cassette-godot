@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/excellent.mp3-d6fc83c81385d2859723eb726d8f8058.mp3str"
+
+[deps]
+
+source_file="res://audio/excellent.mp3"
+dest_files=[ "res://.import/excellent.mp3-d6fc83c81385d2859723eb726d8f8058.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
