@@ -213,60 +213,130 @@ And just like that, you've successfully set up a state-esque machine that will h
 Thanks, and happy developing!
 
 ---
+## Magic Cassette API
 ### Track Parameters
 
 ### `on_start`
-#### *Status*: Implemented
+#### *Status*: <span style="color:limegreen">Implemented</span>
 #### *Description*
+At the start of the track, perform any method(s).  
+
+| Methods |
+| --------- |
+| `fade_in` |
+| `play`    |
+| `goto_position` |
+
+#### *Method Descriptions*
+
+#### *Example*
+
+
 ---
 ### `on_end`
-#### *Status*: Implemented
+#### *Status*: <span style="color:limegreen">Implemented</span>
 #### *Description*
+At the end of the track, perform any method(s).
+
+| Methods |
+| ------ |
+| `loop` |
+| `stop` |
+| `next` |
+
+#### *Method Descriptions*
+
+#### *Example*
+
+
 ---
 ### `beats_to_emit_signal`
-#### *Status*: Implemented (to be changed to `on_beat`)
+#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be changed to `on_beat`)</span>
 #### *Description*
+Emits the signal `music_cue(beat)` to given objects with the connection method `_on_music_cue(beat)`
+
+#### *Example*
+
+
 ---
 ### `next_song`
-#### *Status*: Implemented (to be added as a method to `on_start` and `on_end`'s method: `next`)
+#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be added as a method to `on_start` and `on_end`'s method: `next`)</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `next_song_params`
-#### *Status*: Implemented (to be combined with `next_song`)
+#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be combined with `next_song`)</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `other_callback`
-#### *Status*: Implemented (to be added as a method for `on_start` and `on_end`)
+#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be added as a method for `on_start` and `on_end`)</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### Audio Actions
 
 ### `play`
-#### *Status*: Implemented
+#### *Status*: <span style="color:limegreen">Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `add`
-#### *Status*: Not Yet Implemented
+#### *Status*: <span style="color:red">Not Yet Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `fade_in`
-#### *Status*: Not Yet Implemented
+#### *Status*: <span style="color:red">Not Yet Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `fade_out`
-#### *Status*: Implemented
+#### *Status*: <span style="color:limegreen">Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `transition_to`
-#### *Status*: Implemented
+#### *Status*: <span style="color:limegreen">Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `cut_to`
-#### *Status*: Not Yet Implemented
+#### *Status*: <span style="color:red">Not Yet Implemented</span>
 #### *Description*
+
+#### *Example*
+
+
 ---
 ### `play_sfx`
-#### *Status*: Not Yet Implemented
+#### *Status*: <span style="color:red">Not Yet Implemented</span>
 #### *Description*
----
+
+#### *Example*
+
 
