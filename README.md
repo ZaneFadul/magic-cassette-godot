@@ -25,7 +25,7 @@ res://
     |
    ...
 ```
----
+
 ## Set Up
 Once you have the `AudioManager` folder in your project, you now need to fill in `audio.cfg`, which can be found in the `AudioManager` folder. The configuration file should look like this:
 ```js
@@ -45,7 +45,7 @@ For our example how to fill this configuration file, we're going to set up our m
 1. Move `AudioManager` into project folder.
 2. Autoload `audio_manager.tscn` in Project Settings (place it *after* any globals)
 3. Fill out `audio.cfg`
----
+
 ## `Tracks`
 **Tracks** are objects that store:
 - an **alias**
@@ -200,7 +200,7 @@ current_location = ["/root/globals", "get_location"]
 root = { "current_location" : {"overworld" : "play_overworld", "item_shop" : "play_item_shop", "castle" : "play_castle"}
 ```
 And just like that, you've successfully set up a state-esque machine that will handle your music for you in one file.
----
+
 ### Conclusion
 **Magic Cassette** is a work in progress, and I would love any feedback on how to improve the manager. Some things I have in mind right now are:
 - More integration for sound effects
@@ -211,6 +211,7 @@ And just like that, you've successfully set up a state-esque machine that will h
 - Building this manager for Unity
 
 Thanks, and happy developing!
+
 ---
 ### Track Parameters
 
