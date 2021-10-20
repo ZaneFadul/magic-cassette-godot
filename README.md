@@ -6,7 +6,7 @@ Well, the file names definitely don't correlate with the title *or* this reposit
 **Magic Cassette** is a lightweight audio manager that persists over a project, and will automatically change sound simply given a set amount of parameters. This solution was designed to make audio management more flexible and centralized, so that you don't have to worry about fixing the logical errors of why that town music keeps overlapping itself!. Using a tree-like data structure, when Magic Cassette's internal state is changed *(due to changes somewhere else in the game's variables)*, the manager will traverse the tree to return an Audio Action. This Action determines what is played and how it is played.
 
 The motivation for this project is actually based on a Unity animation solution called [Reanimator](https://github.com/aarthificial/reanimation) by [@aarthificial](https://github.com/aarthificial). His work is so impressive; seriously, go check him out!
-
+---
 ## Installation
 I *did* say this was lightweight. All you have to do is copy the `AudioManager` folder into your own  project! The path will change dynamically, so you don't have to worry about nested directories breaking anything. The folder structure for this example project is as follows:
 ```
@@ -25,7 +25,7 @@ res://
     |
    ...
 ```
-
+---
 ## Set Up
 Once you have the `AudioManager` folder in your project, you now need to fill in `audio.cfg`, which can be found in the `AudioManager` folder. The configuration file should look like this:
 ```js
@@ -45,7 +45,7 @@ For our example how to fill this configuration file, we're going to set up our m
 1. Move `AudioManager` into project folder.
 2. Autoload `audio_manager.tscn` in Project Settings (place it *after* any globals)
 3. Fill out `audio.cfg`
-
+---
 ## `Tracks`
 **Tracks** are objects that store:
 - an **alias**
@@ -200,7 +200,7 @@ current_location = ["/root/globals", "get_location"]
 root = { "current_location" : {"overworld" : "play_overworld", "item_shop" : "play_item_shop", "castle" : "play_castle"}
 ```
 And just like that, you've successfully set up a state-esque machine that will handle your music for you in one file.
-
+---
 ### Conclusion
 **Magic Cassette** is a work in progress, and I would love any feedback on how to improve the manager. Some things I have in mind right now are:
 - More integration for sound effects
@@ -210,7 +210,62 @@ And just like that, you've successfully set up a state-esque machine that will h
 - Potentially better ways to retrieve **State Variables** without relying on adding methods to specified scene nodes
 - Building this manager for Unity
 
-Thanks, and happy coding!
+Thanks, and happy developing!
+---
+### Track Parameters
 
-### Action Types
-Will write a thorough documentation about all the possible control methods for **Actions** soon.
+### `on_start`
+#### *Status*: Implemented
+#### *Description*
+---
+### `on_end`
+#### *Status*: Implemented
+#### *Description*
+---
+### `beats_to_emit_signal`
+#### *Status*: Implemented (to be changed to `on_beat`)
+#### *Description*
+---
+### `next_song`
+#### *Status*: Implemented (to be added as a method to `on_start` and `on_end`'s method: `next`)
+#### *Description*
+---
+### `next_song_params`
+#### *Status*: Implemented (to be combined with `next_song`)
+#### *Description*
+---
+### `other_callback`
+#### *Status*: Implemented (to be added as a method for `on_start` and `on_end`)
+#### *Description*
+---
+### Audio Actions
+
+### `play`
+#### *Status*: Implemented
+#### *Description*
+---
+### `add`
+#### *Status*: Not Yet Implemented
+#### *Description*
+---
+### `fade_in`
+#### *Status*: Not Yet Implemented
+#### *Description*
+---
+### `fade_out`
+#### *Status*: Implemented
+#### *Description*
+---
+### `transition_to`
+#### *Status*: Implemented
+#### *Description*
+---
+### `cut_to`
+#### *Status*: Not Yet Implemented
+#### *Description*
+---
+### `play_sfx`
+#### *Status*: Not Yet Implemented
+#### *Description*
+---
+
