@@ -268,7 +268,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `next_song_params`
-#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be combined with `next_song`)</span> :heavy_check_mark:
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be combined with `next_song`)</span>
 #### *Description*
 
 #### *Example*
