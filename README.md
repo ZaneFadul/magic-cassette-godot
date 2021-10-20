@@ -217,7 +217,7 @@ Thanks, and happy developing!
 ### Track Parameters
 
 ### `on_start`
-#### *Status*: <span style="color:limegreen">Implemented</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :check mark:
 #### *Description*
 At the start of the track, perform any method(s).  
 
