@@ -234,7 +234,7 @@ At the start of the track, perform any method(s).
 
 ---
 ### `on_end`
-#### *Status*: <span style="color:limegreen">Implemented</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
 #### *Description*
 At the end of the track, perform any method(s).
 
@@ -251,7 +251,7 @@ At the end of the track, perform any method(s).
 
 ---
 ### `beats_to_emit_signal`
-#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be changed to `on_beat`)</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be changed to `on_beat`)</span>
 #### *Description*
 Emits the signal `music_cue(beat)` to given objects with the connection method `_on_music_cue(beat)`
 
@@ -260,7 +260,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `next_song`
-#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be added as a method to `on_start` and `on_end`'s method: `next`)</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be added as a method to `on_start` and `on_end`'s method: `next`)</span>
 #### *Description*
 
 #### *Example*
@@ -268,7 +268,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `next_song_params`
-#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be combined with `next_song`)</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be combined with `next_song`)</span> :heavy_check_mark:
 #### *Description*
 
 #### *Example*
@@ -276,7 +276,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `other_callback`
-#### *Status*: <span style="color:limegreen">Implemented</span> <span style="color:darkgray">(to be added as a method for `on_start` and `on_end`)</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be added as a method for `on_start` and `on_end`)</span>
 #### *Description*
 
 #### *Example*
@@ -286,7 +286,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 ### Audio Actions
 
 ### `play`
-#### *Status*: <span style="color:limegreen">Implemented</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
 #### *Description*
 
 #### *Example*
@@ -294,7 +294,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `add`
-#### *Status*: <span style="color:red">Not Yet Implemented</span>
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
 #### *Description*
 
 #### *Example*
@@ -302,7 +302,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `fade_in`
-#### *Status*: <span style="color:red">Not Yet Implemented</span>
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
 #### *Description*
 
 #### *Example*
@@ -310,7 +310,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `fade_out`
-#### *Status*: <span style="color:limegreen">Implemented</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
 #### *Description*
 
 #### *Example*
@@ -318,7 +318,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `transition_to`
-#### *Status*: <span style="color:limegreen">Implemented</span>
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
 #### *Description*
 
 #### *Example*
@@ -326,7 +326,7 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `cut_to`
-#### *Status*: <span style="color:red">Not Yet Implemented</span>
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
 #### *Description*
 
 #### *Example*
@@ -334,9 +334,13 @@ Emits the signal `music_cue(beat)` to given objects with the connection method `
 
 ---
 ### `play_sfx`
-#### *Status*: <span style="color:red">Not Yet Implemented</span>
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
 #### *Description*
 
 #### *Example*
+
+
+
+
 
 
