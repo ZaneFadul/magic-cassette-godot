@@ -11,11 +11,12 @@ config_version=4
 [application]
 
 config/name="magic-cassette-godot"
-run/main_scene="res://scenes/level/test.tscn"
+run/main_scene="res://scenes/levels/castle.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+globals="*res://scenes/globals.gd"
 AudioManager="*res://scenes/audio/AudioManager/audio_manager.tscn"
 
 [physics]

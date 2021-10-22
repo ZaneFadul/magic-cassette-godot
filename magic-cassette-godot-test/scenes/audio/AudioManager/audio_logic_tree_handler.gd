@@ -1,6 +1,7 @@
 extends Node2D
 
 signal state_changed(action)
+signal handle_error(err_message)
 
 #=====State
 onready var state_directory setget set_state_directory
@@ -11,8 +12,9 @@ var prev_state = {}
 var will_update = false
 
 #=====Actions
-onready var audio_actions setget set_audio_actions
+onready var audio_actions setget set_audio_actions, get_audio_actions
 func set_audio_actions(aa): audio_actions = aa
+func get_audio_actions(): return audio_actions
 
 #=====Tree
 onready var trees setget set_trees
@@ -45,6 +47,7 @@ func set_trees(t): trees = t
 
 func _ready():
 	connect('state_changed', get_parent(), '_on_state_changed')
+	connect('handle_error', get_parent(), '_on_error')
 	state = get_state()
 	
 func get_state():
@@ -62,27 +65,38 @@ func _compare_dict(dict1, dict2):
 			return false
 	return true
 	
-func traverse(tree, state):
-	var node_param = null
-	var path = null
-	for root in tree:
-		node_param = root
-	path = tree[node_param]
-	while typeof(path) != TYPE_STRING:
-		var direction = str(state[node_param]).to_lower()
-		path = path[direction]
-		if typeof(path) == TYPE_STRING:
-			break
-		for root in path: #subtree
-			node_param = root
-		path = path[node_param]
-	return path
-	
 func _process(delta):
 	if not _compare_dict(state,prev_state):
-		will_update = true
+		if traverse(trees['root'],state) != traverse(trees['root'], prev_state):
+			will_update = true
 	if will_update:
 		emit_signal('state_changed', audio_actions[traverse(trees['root'], state)])
 		will_update = false
 	prev_state = state
 	state = get_state()
+	
+func traverse(tree, state):
+	var curr_node = null
+	var curr_path = null
+	for root in tree:
+		curr_node = root
+	curr_path = tree[curr_node]
+	while typeof(curr_path) != TYPE_STRING:
+		var curr_direction = ''
+		if state.has(curr_node):
+			curr_direction = str(state[curr_node])
+		else:
+			emit_signal("handle_error", curr_node + " not in the current tree path!")
+			return
+		if curr_path.has(curr_direction):
+			curr_path = curr_path[curr_direction]
+		else:
+			emit_signal('handle_error', curr_direction + ' not in the current tree path!')
+			return
+		if typeof(curr_path) == TYPE_STRING:
+			break
+		for root in curr_path: #subtree
+			curr_node = root
+		curr_path = curr_path[curr_node]
+	return curr_path
+	

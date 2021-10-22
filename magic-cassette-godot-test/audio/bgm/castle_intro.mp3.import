@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/castle_intro.mp3-41f9b926b98c6a4607c8c0b0adfca1b0.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/castle_intro.mp3"
+dest_files=[ "res://.import/castle_intro.mp3-41f9b926b98c6a4607c8c0b0adfca1b0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

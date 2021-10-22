@@ -10,6 +10,7 @@ var total_beats = 0
 var song_length = 0
 var prev_frame_beat = 0
 var current_beat = 1
+var original_volume = 0.0
 var beats_to_emit_signal = {
 	'#': 'ref_to_node_relative_to_current_scene'
 }
@@ -24,6 +25,7 @@ signal song_ended(song)
 signal remove_me(song)
 
 func handle_params(params): $song_params.params = params
+func set_params(key, value): $song_params.params[key] = value
 func get_params(): return $song_params.params
 func has_param(key): return (get_param(key) != null)
 func get_song_handler(): return get_param('song_handler')
@@ -54,8 +56,7 @@ func set_ready():
 	
 	#User-Set Connections
 	for beat in beats_to_emit_signal:
-		var current_scene = get_tree().get_current_scene()
-		var object = current_scene.get_node(beats_to_emit_signal[beat])
+		var object = get_node(beats_to_emit_signal[beat])
 		if object:
 			connect('music_cue', object, '_on_music_cue')
 			
@@ -79,9 +80,10 @@ func _process(_delta):
 		if fade_direction == -1:
 			fade_speed = 0.3
 		set_volume(curr_volume + (fade_speed*fade_direction))
-		if (curr_volume >= 0.0 and fade_direction == 1) or (curr_volume <= -80.0 and fade_direction == -1):
-			if fade_direction == 1: curr_volume = 0.0
+		if (curr_volume >= original_volume and fade_direction == 1) or (curr_volume <= -80.0 and fade_direction == -1):
+			if fade_direction == 1: curr_volume = original_volume
 			elif fade_direction == -1: curr_volume = -80.0
+			set_volume(curr_volume)
 			set_volume(curr_volume)
 			is_fading = false
 			if fade_direction == -1: emit_signal('remove_me', self)
@@ -104,14 +106,17 @@ func set_volume(num):
 	song_file.volume_db = float(num)
 	
 func handle_fade(direction_string):
+	set_params("on_end","stop")
 	if not is_fading:
 		if direction_string == 'in':
 			fade_direction = 1
+			original_volume = get_volume()
 			set_volume(-80.0)
 
 		elif direction_string == 'out':
 			fade_direction = -1
-			set_volume(0.0)
+			original_volume = get_volume()
+			set_volume(original_volume)
 		else:
 			fade_direction = 1
 		is_fading = true

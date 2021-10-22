@@ -15,13 +15,6 @@ func _create_track_obj(name, bpm, total_beats, filename=null):
 	else:
 		fn = filename
 	return Track.new(name, bpm, total_beats, fn)
-	
-#=== to delete: this is just for testing purposes
-func getMode(): return get_node('/root/test/globals').getMode()
-func get_curr(): return 'illuminata'
-func return_true(): return true
-func return_false(): return false
-#=== to delete: this is just for testing purposes
 
 func _ready():
 	connect('configured', get_parent(), '_on_configured')
@@ -31,7 +24,7 @@ func _handle_config():
 	var config = ConfigFile.new()
 	var base_path = get_script().resource_path
 	var trimmed_path = base_path.substr(0, len(base_path)-23)
-	var err = config.load(trimmed_path + 'audio.cfg')
+	var err = config.load(trimmed_path + 'audio.ini')
 	if err == OK:
 		print('Audio Manager configuration file loaded and parsed successfully!')
 		tracks = get_tracks(config)
