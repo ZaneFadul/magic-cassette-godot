@@ -1,5 +1,5 @@
 # Magic Cassette (for Godot)
-## *a lightweight solution for audio management*
+## *a lightweight solution to audio management*
 ## Intro
 Well, the file names definitely don't correlate with the title *or* this repository, but that will change as I flesh this project out. For now, I'll help you guys understand a little bit how this audio manager works!
 
@@ -40,6 +40,11 @@ Once you have the `AudioManager` folder in your project, you now need to fill in
 ```
 
 For our example how to fill this configuration file, we're going to set up our manager for ***playing music in a fantasy town.*** This is a made up example, and not the example that is reflected in the files. With enough interest, I can defintely bring the example to life though!
+
+### TLDR
+1. Move `AudioManager` into project folder.
+2. Autoload `audio_manager.tscn` in Project Settings (place it *after* any globals)
+3. Fill out `audio.cfg`
 
 ## `Tracks`
 **Tracks** are objects that store:
@@ -205,7 +210,137 @@ And just like that, you've successfully set up a state-esque machine that will h
 - Potentially better ways to retrieve **State Variables** without relying on adding methods to specified scene nodes
 - Building this manager for Unity
 
-Thanks, and happy coding!
+Thanks, and happy developing!
 
-### Action Types
-Will write a thorough documentation about all the possible control methods for **Actions** soon.
+---
+## Magic Cassette API
+### Track Parameters
+
+### `on_start`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
+#### *Description*
+At the start of the track, perform any method(s).  
+
+| Methods |
+| --------- |
+| `fade_in` |
+| `play`    |
+| `goto_position` |
+
+#### *Method Descriptions*
+
+#### *Example*
+
+
+---
+### `on_end`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
+#### *Description*
+At the end of the track, perform any method(s).
+
+| Methods |
+| ------ |
+| `loop` |
+| `stop` |
+| `next` |
+
+#### *Method Descriptions*
+
+#### *Example*
+
+
+---
+### `beats_to_emit_signal`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be changed to `on_beat`)</span>
+#### *Description*
+Emits the signal `music_cue(beat)` to given objects with the connection method `_on_music_cue(beat)`
+
+#### *Example*
+
+
+---
+### `next_song`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be added as a method to `on_start` and `on_end`'s method: `next`)</span>
+#### *Description*
+
+#### *Example*
+
+
+---
+### `next_song_params`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be combined with `next_song`)</span>
+#### *Description*
+
+#### *Example*
+
+
+---
+### `other_callback`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark: <span style="color:darkgray">(to be added as a method for `on_start` and `on_end`)</span>
+#### *Description*
+
+#### *Example*
+
+
+---
+### Audio Actions
+
+### `play`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `add`
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `fade_in`
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `fade_out`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `transition_to`
+#### *Status*: <span style="color:limegreen">Implemented</span> :heavy_check_mark:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `cut_to`
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
+#### *Description*
+
+#### *Example*
+
+
+---
+### `play_sfx`
+#### *Status*: <span style="color:red">Not Yet Implemented</span> :x:
+#### *Description*
+
+#### *Example*
+
+
+
+
+
+
