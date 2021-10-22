@@ -1,7 +1,8 @@
 # Magic Cassette (for Godot)
 ## *a lightweight solution to audio management*
 
-![Alt text]("Magic Cassette Banner.png"?raw=true)
+[My image](zanefadul.github.com/magic-cassette-godot/banner.png)
+
 ## Intro
 Well, the file names definitely don't correlate with the title *or* this repository, but that will change as I flesh this project out. For now, I'll help you guys understand a little bit how this audio manager works!
 
