@@ -5,6 +5,7 @@
 An audio manager to maintain a hands-off audio state machine, so that you can create dynamic audio environments while keeping your logic in one place.
 
 [Installation](#installation) —
+[Getting Started](#set-up) —
 [API](#magic-cassette-api)
 
 ## Intro
