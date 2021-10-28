@@ -1,6 +1,9 @@
 ![My image](https://github.com/ZaneFadul/magic-cassette-godot/blob/main/banner.png)
-# Magic Cassette (for Godot)
-## *a lightweight solution to audio management*
+An audio manager created to maintain a hands-off audio state machine, so that you can implement dynamic audio environments while keeping your code in one place.
+
+[Installation](#installation) —
+[API](#magic-cassette-api)
+
 ## Intro
 Well, the file names definitely don't correlate with the title *or* this repository, but that will change as I flesh this project out. For now, I'll help you guys understand a little bit how this audio manager works!
 
