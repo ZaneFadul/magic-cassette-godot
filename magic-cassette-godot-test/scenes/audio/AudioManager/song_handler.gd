@@ -74,10 +74,10 @@ func _on_song_start(song):
 	if song.has_param('on_start'):
 		for param in song.get_param('on_start'):
 			on_start_func = handler_types[param]
-			on_start_func.call_func(song)
+			on_start_func.call(song)
 	else:
 		on_start_func = 'play'
-		on_start_func.call_func(song)
+		on_start_func.call(song)
 	#implement, to take parameters based on a specific playback position using seconds, OR by beat
 	
 func _on_song_reached_end(song):
@@ -88,7 +88,7 @@ func _on_song_reached_end(song):
 		on_end_func = on_end_types[song.get_param('other_callback')]
 	else:
 		on_end_func = on_end_types['loop']
-	on_end_func.call_func(song)
+	on_end_func.call(song)
 	
 func _on_song_file_end(song):
 	remove_song(song)
