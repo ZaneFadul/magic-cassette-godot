@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/audio/AudioManager/handler_functions.gd" type="Script" id=4]
 
 [node name="song_handler" type="Node2D"]
-pause_mode = 2
+process_mode = 3
 script = ExtResource( 2 )
 
 [node name="on_end_callbacks" type="Node2D" parent="."]

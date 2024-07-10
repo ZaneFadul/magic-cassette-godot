@@ -4,7 +4,7 @@ signal state_changed(action)
 signal handle_error(err_message)
 
 #=====State
-onready var state_directory setget set_state_directory
+@onready var state_directory : set = set_state_directory
 func set_state_directory(sd): state_directory = sd
 
 var state = {}
@@ -12,12 +12,12 @@ var prev_state = {}
 var will_update = false
 
 #=====Actions
-onready var audio_actions setget set_audio_actions, get_audio_actions
+@onready var audio_actions : get = get_audio_actions, set = set_audio_actions
 func set_audio_actions(aa): audio_actions = aa
 func get_audio_actions(): return audio_actions
 
 #=====Tree
-onready var trees setget set_trees
+@onready var trees : set = set_trees
 func set_trees(t): trees = t
 
 #======Example 
@@ -46,14 +46,14 @@ func set_trees(t): trees = t
 
 
 func _ready():
-	connect('state_changed', get_parent(), '_on_state_changed')
-	connect('handle_error', get_parent(), '_on_error')
+	connect('state_changed', Callable(get_parent(), '_on_state_changed'))
+	connect('handle_error', Callable(get_parent(), '_on_error'))
 	state = get_state()
 	
 func get_state():
 	var _state = {}
 	for variable in state_directory:
-		_state[variable] = str(state_directory[variable].call_func())
+		_state[variable] = str(state_directory[variable].call())
 	return _state
 
 func _compare_dict(dict1, dict2):

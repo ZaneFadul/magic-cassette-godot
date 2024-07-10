@@ -4,29 +4,29 @@ signal load_track_request(next_song, new_song_params)
 
 var songs = []
 
-onready var handler_functions = $handler_functions
-onready var handler_types = {
-	'fade_in': funcref(handler_functions, 'fade_in'),
-	'fade_out': funcref(handler_functions, 'fade_out'),
-	'play': funcref(handler_functions, 'play'),
-	'goto_position': funcref(handler_functions, 'goto_position')
+@onready var handler_functions = $handler_functions
+@onready var handler_types = {
+	'fade_in': Callable(handler_functions, 'fade_in'),
+	'fade_out': Callable(handler_functions, 'fade_out'),
+	'play': Callable(handler_functions, 'play'),
+	'goto_position': Callable(handler_functions, 'goto_position')
 }
 
-onready var on_end_callbacks = $on_end_callbacks
-onready var on_end_types = {
-	'loop': funcref(on_end_callbacks, 'loop'),
-	'stop': funcref(on_end_callbacks, 'stop'),
-	'next': funcref(on_end_callbacks, 'next')
+@onready var on_end_callbacks = $on_end_callbacks
+@onready var on_end_types = {
+	'loop': Callable(on_end_callbacks, 'loop'),
+	'stop': Callable(on_end_callbacks, 'stop'),
+	'next': Callable(on_end_callbacks, 'next')
 }
 
 func _ready():
-	connect('load_track_request', get_parent(), '_on_load_track_request')
+	connect('load_track_request', Callable(get_parent(), '_on_load_track_request'))
 
 func load_track(track, song_params):
 	var base_path = get_script().resource_path
 	var trimmed_path = base_path.substr(0, len(base_path)-15)
 	var songScene = load(trimmed_path + 'song.tscn')
-	var song = songScene.instance()
+	var song = songScene.instantiate()
 	add_child(song)
 	songs.append(song)
 	song.trackname = track.name
@@ -48,8 +48,8 @@ func get_current_songs():
 
 func get_pos(song=null):
 	if !song:
-		for song in songs:
-			return song.song_file.get_playback_position()
+		for _song in songs:
+			return _song.song_file.get_playback_position()
 	else:
 		return song.song_file.get_playback_position()
 	

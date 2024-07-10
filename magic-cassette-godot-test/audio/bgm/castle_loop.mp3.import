@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/castle_loop.mp3-7f8327420f69dc14bc4d68ef0024a6ca.mp3str"
+uid="uid://cbgpe5lq1ccb1"
+path="res://.godot/imported/castle_loop.mp3-7f8327420f69dc14bc4d68ef0024a6ca.mp3str"
 
 [deps]
 
 source_file="res://audio/bgm/castle_loop.mp3"
-dest_files=[ "res://.import/castle_loop.mp3-7f8327420f69dc14bc4d68ef0024a6ca.mp3str" ]
+dest_files=["res://.godot/imported/castle_loop.mp3-7f8327420f69dc14bc4d68ef0024a6ca.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

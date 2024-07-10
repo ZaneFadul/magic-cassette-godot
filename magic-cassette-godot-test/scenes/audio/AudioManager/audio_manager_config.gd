@@ -17,7 +17,7 @@ func _create_track_obj(name, bpm, total_beats, filename=null):
 	return Track.new(name, bpm, total_beats, fn)
 
 func _ready():
-	connect('configured', get_parent(), '_on_configured')
+	connect('configured', Callable(get_parent(), '_on_configured'))
 	_handle_config()
 	
 func _handle_config():
@@ -76,7 +76,7 @@ func get_state_directory(config):
 	for key in state_dir_keys:
 		var value = config.get_value(section, key)
 		var node = get_node(value[0])
-		var new_funcref = funcref(node,value[1])
+		var new_funcref = Callable(node,value[1])
 		_state_directory[key] = new_funcref
 	return _state_directory
 	

@@ -5,7 +5,7 @@ var has_handler = false
 var handler = null
 
 func _ready():
-	connect("load_track_request", get_parent(), '_on_load_track_request')
+	connect("load_track_request", Callable(get_parent(), '_on_load_track_request'))
 	
 func play(action):
 	var song = null

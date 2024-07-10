@@ -1,0 +1,6 @@
+res://default_env.tres
+res://scenes/levels/castle.tscn
+res://scenes/audio/AudioManager/song_controller.gd
+res://scenes/audio/AudioManager/song_handler.gd
+res://scenes/audio/AudioManager/audio_manager_config.gd
+res://scenes/audio/AudioManager/audio_logic_tree_handler.gd

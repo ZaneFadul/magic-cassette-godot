@@ -1,16 +1,16 @@
 extends Node2D
 
 #=====Tracks
-onready var tracks setget set_tracks
+@onready var tracks : set = set_tracks
 func set_tracks(t): tracks = t
 
-onready var control_functions = $control_functions
-onready var control_types = {
-	'play': funcref(control_functions, 'play'),
-	'transition_to': funcref(control_functions, 'transition_to'),
-	'cut_to': funcref(control_functions, 'cut_to'),
-	'play_sfx': funcref(control_functions, 'play_sfx'),
-	'fade_out': funcref(control_functions, 'fade_out')
+@onready var control_functions = $control_functions
+@onready var control_types = {
+	'play': Callable(control_functions, 'play'),
+	'transition_to': Callable(control_functions, 'transition_to'),
+	'cut_to': Callable(control_functions, 'cut_to'),
+	'play_sfx': Callable(control_functions, 'play_sfx'),
+	'fade_out': Callable(control_functions, 'fade_out')
 }
 
 func _ready():
@@ -35,7 +35,7 @@ func handle_action(action):
 	for sub_action in action:
 		action_type = sub_action
 		if control_types.has(action_type):
-			control_types[action_type].call_func(action[action_type])
+			control_types[action_type].call(action[action_type])
 	
 func _on_load_track_request(name, song_params):
 	load_track(name, song_params)
