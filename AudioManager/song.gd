@@ -1,6 +1,6 @@
 extends Node
 
-onready var song_file = $song_file
+@onready var song_file = $song_file
 var song_filename = ''
 var trackname = ''
 var spb = 1.0
@@ -50,18 +50,18 @@ func set_ready():
 	#=====Set up Signal Connections
 	#SongHandler connections
 	var song_handler = get_song_handler()
-	connect('song_ended', song_handler, '_on_song_reached_end')
-	connect('file_ended', song_handler, '_on_song_file_end')
-	connect('remove_me', song_handler, '_on_remove_request')
+	connect('song_ended', Callable(song_handler, '_on_song_reached_end'))
+	connect('file_ended', Callable(song_handler, '_on_song_file_end'))
+	connect('remove_me', Callable(song_handler, '_on_remove_request'))
 	
 	#User-Set Connections
 	for beat in beats_to_emit_signal:
 		var object = get_node(beats_to_emit_signal[beat])
 		if object:
-			connect('music_cue', object, '_on_music_cue')
+			connect('music_cue', Callable(object, '_on_music_cue'))
 			
 func _process(_delta):
-	current_beat = stepify( stepify(song_file.get_playback_position(), 0.001) / spb , 1) + 1
+	current_beat = snapped( snapped(song_file.get_playback_position(), 0.001) / spb , 1) + 1
 	if current_beat != prev_frame_beat:
 		if beats_to_emit_signal.has(str(current_beat)):
 			emit_signal('music_cue', current_beat)
@@ -125,7 +125,7 @@ func is_playing():
 	return song_file.is_playing()
 	
 func reached_song_end():
-	return stepify(song_file.get_playback_position(), 0.001) >= total_seconds
+	return snapped(song_file.get_playback_position(), 0.001) >= total_seconds
 
 func reached_file_end():
-	return stepify(song_file.get_playback_position(), 0.1) + 0.1 >= song_length
+	return snapped(song_file.get_playback_position(), 0.1) + 0.1 >= song_length

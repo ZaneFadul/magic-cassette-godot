@@ -17,14 +17,14 @@ func _create_track_obj(name, bpm, total_beats, filename=null):
 	return Track.new(name, bpm, total_beats, fn)
 
 func _ready():
-	connect('configured', get_parent(), '_on_configured')
+	connect('configured', Callable(get_parent(), '_on_configured'))
 	_handle_config()
 	
 func _handle_config():
 	var config = ConfigFile.new()
 	var base_path = get_script().resource_path
 	var trimmed_path = base_path.substr(0, len(base_path)-23)
-	var err = config.load(trimmed_path + 'audio.cfg')
+	var err = config.load(trimmed_path + 'audio.ini')
 	if err == OK:
 		print('Audio Manager configuration file loaded and parsed successfully!')
 		tracks = get_tracks(config)
@@ -76,7 +76,7 @@ func get_state_directory(config):
 	for key in state_dir_keys:
 		var value = config.get_value(section, key)
 		var node = get_node(value[0])
-		var new_funcref = funcref(node,value[1])
+		var new_funcref = Callable(node,value[1])
 		_state_directory[key] = new_funcref
 	return _state_directory
 	

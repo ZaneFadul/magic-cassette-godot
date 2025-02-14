@@ -25,7 +25,7 @@ func transition_to(action):
 		var start_pos = 0
 		for song in songs:
 			start_pos = handler.get_pos()
-			handler.handler_types['fade_out'].call_func(song)
+			handler.handler_types['fade_out'].call(song)
 		var song = null
 		for root in action:
 			song = root
@@ -50,7 +50,7 @@ func fade_out(action):
 	for song in songs:
 		if songs_to_fade.has(song):
 			var start_pos = handler.get_pos(song)
-			handler.handler_types['fade_out'].call_func(song)
+			handler.handler_types['fade_out'].call(song)
 
 func validate():
 	if not has_handler:

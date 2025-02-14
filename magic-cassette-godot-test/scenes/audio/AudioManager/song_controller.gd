@@ -31,6 +31,7 @@ func clear():
 	$song_handler.clear()
 	
 func handle_action(action):
+	clear()
 	var action_type = null
 	for sub_action in action:
 		action_type = sub_action
@@ -42,4 +43,3 @@ func _on_load_track_request(name, song_params):
 	
 func get_current_songs():
 	return $song_handler.get_current_songs()
-

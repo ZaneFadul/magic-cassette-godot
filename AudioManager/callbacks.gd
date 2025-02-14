@@ -3,7 +3,7 @@ extends Node2D
 signal load_track_request(next_song, new_song_params)
 
 func _ready():
-	connect('load_track_request', get_parent(), '_on_load_track_request')
+	connect('load_track_request', Callable(get_parent(), '_on_load_track_request'))
 	
 func stop(song):
 	pass

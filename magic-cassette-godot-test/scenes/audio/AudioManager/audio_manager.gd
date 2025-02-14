@@ -32,7 +32,6 @@ func _on_configured():
 func handle_actions(actionArray):
 	var audio_actions = $audio_logic_tree_handler.get_audio_actions()
 	for action in actionArray:
-		print('handle_actions ', action)
 		var action_to_perform = null
 		if typeof(action) == TYPE_DICTIONARY: action_to_perform = action
 		elif audio_actions.has(action): action_to_perform = audio_actions[action]
@@ -41,10 +40,10 @@ func handle_actions(actionArray):
 func _on_perform_audio_action(action):
 	$song_controller.handle_action(action)
 	
-func _on_state_changed(action):
+func _on_state_changed(state, action):
 	$song_controller.handle_action(action)
 
 func _on_error(err_message):
-	print('AudioManager encountered an error: ' + err_message)
+	print('%s encountered an error: ' % MY_NAME + err_message)
 	$song_controller.clear()
 	set_process(false)
