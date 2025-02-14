@@ -51,7 +51,7 @@ For our example how to fill this configuration file, we're going to set up our m
 1. Move `AudioManager` into project folder.
 2. Autoload `audio_manager.tscn` in Project Settings (place it *after* any globals)
 3. Fill out `audio.cfg`
-(optional) 4. If exporting to web, you must make sure to include `audio.cfg` to the export.
+4. (optional) If exporting to web, you must make sure to include `audio.cfg` to the export.
 
 ## `Tracks`
 **Tracks** are objects that store:
