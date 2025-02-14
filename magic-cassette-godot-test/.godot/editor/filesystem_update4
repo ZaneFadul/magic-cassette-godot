@@ -1,3 +1,4 @@
 res://default_env.tres
 res://scenes/levels/castle.tscn
-res://scenes/audio/AudioManager/audio.ini
+res://scenes/audio/AudioManager/audio_manager.tscn
+res://scenes/audio/AudioManager/audio_logic_tree_handler.tscn

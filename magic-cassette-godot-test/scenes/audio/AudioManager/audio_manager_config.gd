@@ -24,7 +24,7 @@ func _handle_config():
 	var config = ConfigFile.new()
 	var base_path = get_script().resource_path
 	var trimmed_path = base_path.substr(0, len(base_path)-23)
-	var err = config.load(trimmed_path + 'audio.ini')
+	var err = config.load(trimmed_path + 'audio.cfg')
 	if err == OK:
 		print('Audio Manager configuration file loaded and parsed successfully!')
 		tracks = get_tracks(config)
